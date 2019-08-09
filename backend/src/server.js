@@ -1,11 +1,9 @@
 const express = require('express');
+const routes = require('./routes');
 
 const server = express();
 
-// GET, POST, PUT, DELETE
-
-server.get('/', (request, response) => {
-    return response.send('Hello World!!!');
-});
+server.use(express.json());
+server.use(routes);
 
 server.listen(3333);
